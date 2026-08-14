@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>A Little Invitation</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         SCREEN 1
+    ========================== -->
+
+    <main class="screen screen-one" id="screenOne">
+
+        <section class="photo-section">
+
+            <div class="photo-slider">
+
+                <div class="slide active">
+                    <img src="assets/bride-1.jpg" alt="Bride">
+                </div>
+
+                <div class="slide">
+                    <img src="assets/bride-2.jpg" alt="Bride">
+                </div>
+
+                <div class="slide">
+                    <img src="assets/bride-3.jpg" alt="Bride">
+                </div>
+
+            </div>
+
+            <div class="slider-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+
+        </section>
+
+
+        <section class="invitation-content">
+
+            <p class="eyebrow">
+                A little invitation, from me to you
+            </p>
+
+            <h1>
+                I have something
+                <span>very special</span>
+                to ask you…
+            </h1>
+
+            <p class="tagline">
+                As I begin this beautiful chapter of my life,
+                I want some of my favourite women by my side.
+            </p>
+
+            <p class="little-note">
+                And I would absolutely love for you to be one of them. <i class="fa-solid fa-heart"></i>
+            </p>
+
+            <button class="continue-btn" id="continueBtn">
+                I have a feeling I know what this is <i class="fa-solid fa-eye"></i>
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         SCREEN 2
+    ========================== -->
+
+    <main class="screen screen-two" id="screenTwo">
+
+        <div class="question-wrapper">
+
+            <h2>
+                Will you be part of
+                <em>my bridal train?</em>
+            </h2>
+
+            <p class="question-subtext">
+                I can't imagine this beautiful journey
+                without you by my side.
+            </p>
+
+
+            <div class="answer-buttons">
+
+                <button class="yes-btn" id="yesBtn">
+                    YES, I'M IN!
+                    <i class="fa-solid fa-heart"></i>
+                </button>
+
+                <button class="think-btn" id="thinkBtn">
+                    Let me think…
+                    <i class="fa-solid fa-face-sad-tear"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Think About It Modal -->
+
+        <div class="modal-overlay" id="thinkModal">
+
+            <div class="think-modal">
+
+                <button class="close-modal" id="closeModal" aria-label="Close">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+                <div class="modal-icon">
+                    <i class="fa-solid fa-face-sad-tear"></i>
+                </div>
+
+                <h3>
+                    Waittt…
+                </h3>
+
+                <p>
+                    You're really going to make the bride wait?
+                </p>
+
+                <p class="modal-small-text">
+                    Okay, okay… I'll give you a little time. <i class="fa-solid fa-heart"></i>
+                </p>
+
+                <button class="modal-yes-btn" id="modalYesBtn">
+                    Okay okay, I'm in! <i class="fa-solid fa-heart"></i>
+                </button>
+
+                <button class="modal-close-btn" id="modalCloseBtn">
+                    I'll think about it
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         SCREEN 3
+    ========================== -->
+
+    <main class="screen screen-three" id="screenThree">
+
+        <div class="success-content">
+
+            <div class="success-icon">
+                <i class="fa-regular fa-heart"></i>
+            </div>
+
+            <p class="success-eyebrow">
+                It's official
+            </p>
+
+            <h2>
+                YOU SAID YES! <i class="fa-solid fa-heart"></i>
+            </h2>
+
+            <p>
+                Welcome to the bride's squad.
+            </p>
+
+            <p class="success-message">
+                I'm so happy you're doing this with me.
+            </p>
+
+            <div class="confetti-container" id="confettiContainer"></div>
+
+            <div class="whatsapp-card">
+
+                <p>
+                    Now come join the girls…
+                </p>
+
+                <button id="whatsappBtn">
+                    JOIN THE ASO EBI LADIES
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- =========================
+     SCREEN 4
+========================== -->
+
+<main class="screen screen-four" id="screenFour">
+
+    <div class="persuasion-content">
+
+        <div class="persuasion-icon">
+            <i class="fa-regular fa-heart"></i>
+        </div>
+
+        <p class="persuasion-eyebrow">
+            Just one little thought…
+        </p>
+
+        <h2>
+            Okay… I'll let you
+            <em>think.</em>
+        </h2>
+
+        <p class="persuasion-text">
+            But before you go…
+        </p>
+
+        <p class="persuasion-note">
+            Just imagine us getting ready together, laughing over
+            absolutely nothing, taking way too many pictures,
+            fixing each other's outfits, and making memories
+            I'll probably talk about forever.
+        </p>
+
+        <p class="persuasion-note">
+            I'd really, really love to have you beside me
+            for this chapter.
+        </p>
+
+        <p class="persuasion-question">
+            So… what do you say?
+        </p>
+
+        <div class="persuasion-buttons">
+
+            <button
+                class="persuasion-yes-btn"
+                id="persuasionYesBtn"
+            >
+                YES, I'M IN!
+                <i class="fa-solid fa-heart"></i>
+            </button>
+
+            <button
+                class="persuasion-stay-btn"
+                id="persuasionStayBtn"
+            >
+                Okay, I still need time
+            </button>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+    <script src="scripts.js"></script>
+
+</body>
+</html>

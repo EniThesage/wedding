@@ -1,0 +1,1232 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: #f8f4ef;
+    color: #2d2926;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.invitation {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 20px 40px;
+    overflow: hidden;
+}
+
+
+/* =========================
+   PHOTO SLIDER
+========================= */
+
+.photo-section {
+    width: 100%;
+    max-width: 520px;
+}
+
+.photo-slider {
+    position: relative;
+    width: 100%;
+    height: 55vh;
+    min-height: 420px;
+    max-height: 620px;
+
+    overflow: hidden;
+
+    border-radius: 24px;
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+
+    opacity: 0;
+
+    transition:
+        opacity 1.2s ease,
+        transform 5s ease;
+
+    transform: scale(1.04);
+}
+
+.slide.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* =========================
+   IMAGE OVERLAY
+========================= */
+
+.photo-slider::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.02),
+            rgba(0, 0, 0, 0.08)
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   SLIDER DOTS
+========================= */
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+
+    margin-top: 14px;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #d5cec6;
+
+    transition: all 0.4s ease;
+}
+
+.dot.active {
+    width: 20px;
+    border-radius: 10px;
+    background: #6d625b;
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.invitation-content {
+    width: 100%;
+    max-width: 520px;
+
+    text-align: center;
+
+    padding: 48px 10px 0;
+}
+
+
+/* =========================
+   EYEBROW
+========================= */
+
+.eyebrow {
+    font-size: 0.72rem;
+
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+
+    color: #8b7d72;
+
+    margin-bottom: 18px;
+
+    opacity: 0;
+    animation: fadeUp 0.9s ease forwards;
+    animation-delay: 0.4s;
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+h1 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(2.8rem, 10vw, 4.5rem);
+
+    line-height: 0.95;
+
+    font-weight: 500;
+
+    letter-spacing: -0.02em;
+
+    margin-bottom: 26px;
+
+    opacity: 0;
+    animation: fadeUp 1s ease forwards;
+    animation-delay: 0.7s;
+}
+
+h1 span {
+    display: inline-block;
+    padding: 1px 9px 3px;
+    margin: 2px 0;
+    background-color: #302a27;
+    color: #fff;
+    border: 1px solid #302a27;
+    border-radius: 1rem;
+    font-style: normal;
+}
+
+/* =========================
+   TAGLINE
+========================= */
+
+.tagline {
+    max-width: 430px;
+
+    margin: 0 auto;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.25rem;
+
+    line-height: 1.45;
+
+    color: #5f554e;
+
+    opacity: 0;
+    animation: fadeUp 1s ease forwards;
+    animation-delay: 1s;
+}
+
+
+/* =========================
+   LITTLE NOTE
+========================= */
+
+.little-note {
+    margin-top: 18px;
+
+    font-size: 0.9rem;
+
+    color: #756a62;
+
+    opacity: 0;
+    animation: fadeUp 1s ease forwards;
+    animation-delay: 1.3s;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.continue-btn {
+    margin-top: 34px;
+
+    border: none;
+
+    background: #302a27;
+
+    color: #fff;
+
+    padding: 16px 24px;
+
+    border-radius: 50px;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 0.85rem;
+
+    cursor: pointer;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+    opacity: 0;
+    animation: fadeUp 1s ease forwards;
+    animation-delay: 1.6s;
+}
+
+.continue-btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 25px rgba(48, 42, 39, 0.18);
+}
+
+.continue-btn:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================
+   DESKTOP
+========================= */
+
+@media (min-width: 768px) {
+
+    .screen-one {
+        padding-top: 40px;
+    }
+
+    .photo-slider {
+        height: 560px;
+    }
+
+    .invitation-content {
+        padding-top: 55px;
+    }
+
+}
+
+
+/* =========================
+   SCREEN SYSTEM
+========================= */
+
+.screen {
+    min-height: 100vh;
+}
+
+/* =========================
+   SCREEN ONE
+========================= */
+
+.screen-one {
+    min-height: 100vh;
+
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    padding: 24px 20px 60px;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   SCREEN TWO
+========================= */
+
+.screen-two {
+    display: none;
+
+    min-height: 100vh;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px 24px;
+
+    background: #f8f4ef;
+
+    text-align: center;
+}
+
+.screen-two.show {
+    display: flex;
+}
+
+.question-wrapper {
+    width: 100%;
+    max-width: 650px;
+}
+
+
+/* =========================
+   QUESTION
+========================= */
+
+/* .question-eyebrow {
+    font-size: 0.75rem;
+
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+
+    color: #8b7d72;
+
+    margin-bottom: 25px;
+
+    opacity: 0;
+
+    animation: fadeUp 0.8s ease forwards;
+}
+
+
+.question-decoration {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 25px;
+
+    color: #9b8b7e;
+}
+
+.question-decoration span:first-child,
+.question-decoration span:last-child {
+    width: 45px;
+    height: 1px;
+
+    background: #d8cec5;
+}
+
+
+.question-decoration span:nth-child(2) {
+    font-size: 1.4rem;
+} */
+
+
+.question-wrapper h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(3rem, 11vw, 5.5rem);
+
+    line-height: 0.95;
+
+    font-weight: 500;
+
+    letter-spacing: -0.03em;
+
+    margin-bottom: 30px;
+
+    color: #2d2926;
+}
+
+.question-wrapper h2 em {
+    display: block;
+
+    font-style: italic;
+
+    color: #76685f;
+}
+
+
+.question-subtext {
+    max-width: 420px;
+
+    margin: 0 auto;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.3rem;
+
+    line-height: 1.4;
+
+    color: #665b54;
+}
+
+
+/* =========================
+   ANSWER BUTTONS
+========================= */
+
+.answer-buttons {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+
+    width: 100%;
+
+    max-width: 360px;
+
+    margin: 42px auto 0;
+}
+
+.yes-btn,
+.think-btn {
+    width: 100%;
+
+    padding: 17px 22px;
+
+    border-radius: 50px;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 0.82rem;
+
+    letter-spacing: 0.03em;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.yes-btn {
+    border: none;
+
+    background: #302a27;
+
+    color: white;
+}
+
+.think-btn {
+    border: 1px solid #cfc4bb;
+
+    background: transparent;
+
+    color: #4e4540;
+}
+
+
+.yes-btn:hover,
+.think-btn:hover {
+    transform: translateY(-3px);
+}
+
+
+.yes-btn:hover {
+    box-shadow: 0 12px 25px rgba(48, 42, 39, 0.18);
+}
+
+
+/* =========================
+   THINK MODAL
+========================= */
+
+.modal-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 100;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+
+    background: rgba(35, 30, 27, 0.45);
+
+    backdrop-filter: blur(7px);
+}
+
+.modal-overlay.show {
+    display: flex;
+}
+
+
+.think-modal {
+    position: relative;
+
+    width: 100%;
+    max-width: 390px;
+
+    padding: 45px 28px 30px;
+
+    background: #faf7f3;
+
+    border-radius: 28px;
+
+    text-align: center;
+
+    box-shadow: 0 25px 70px rgba(30, 25, 22, 0.2);
+
+    animation: modalIn 0.35s ease forwards;
+}
+
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 18px;
+
+    border: none;
+    background: transparent;
+
+    color: #7d7169;
+
+    cursor: pointer;
+}
+
+.close-modal i {
+    font-size: 1rem;
+}
+
+
+.modal-icon {
+    font-size: 2.7rem;
+
+    margin-bottom: 15px;
+}
+
+
+.think-modal h3 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 2.8rem;
+
+    font-weight: 500;
+
+    margin-bottom: 10px;
+}
+
+
+.think-modal > p {
+    color: #4f4640;
+
+    font-size: 0.95rem;
+
+    line-height: 1.5;
+}
+
+
+.modal-small-text {
+    margin-top: 8px;
+
+    color: #83766d !important;
+}
+
+
+.modal-yes-btn,
+.modal-close-btn {
+    width: 100%;
+
+    padding: 15px;
+
+    border-radius: 50px;
+
+    font-family: "DM Sans", sans-serif;
+
+    cursor: pointer;
+
+    margin-top: 22px;
+}
+
+
+.modal-yes-btn {
+    border: none;
+
+    background: #302a27;
+
+    color: white;
+}
+
+
+.modal-close-btn {
+    margin-top: 10px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #776b63;
+}
+
+
+/* =========================
+   MODAL ANIMATION
+========================= */
+
+@keyframes modalIn {
+
+    from {
+        opacity: 0;
+        transform: scale(0.94) translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* =========================
+   SCREEN THREE
+========================= */
+
+.screen-three {
+    display: none;
+
+    min-height: 100vh;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px 24px;
+
+    background: #f8f4ef;
+
+    text-align: center;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.screen-three.show {
+    display: flex;
+}
+
+
+/* =========================
+   SUCCESS CONTENT
+========================= */
+
+.success-content {
+    width: 100%;
+    max-width: 560px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================
+   SUCCESS ICON
+========================= */
+
+.success-icon {
+    width: 72px;
+    height: 72px;
+
+    margin: 0 auto 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #cfc2b8;
+
+    border-radius: 50%;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 2rem;
+
+    color: #776960;
+
+    animation: heartFloat 2s ease-in-out infinite;
+}
+
+
+/* =========================
+   SUCCESS EYEBROW
+========================= */
+
+.success-eyebrow {
+    font-size: 0.72rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.18em;
+
+    color: #8b7d72;
+
+    margin-bottom: 18px;
+
+    animation: fadeUp 0.8s ease forwards;
+}
+
+
+/* =========================
+   SUCCESS HEADING
+========================= */
+
+.success-content h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(3.2rem, 12vw, 6rem);
+
+    line-height: 0.9;
+
+    font-weight: 500;
+
+    letter-spacing: -0.04em;
+
+    margin-bottom: 24px;
+
+    color: #2d2926;
+
+    animation: fadeUp 0.9s ease forwards;
+}
+
+
+.success-content > p:not(.success-eyebrow):not(.success-message) {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.45rem;
+
+    color: #5f554e;
+
+    animation: fadeUp 1s ease forwards;
+}
+
+
+.success-message {
+    margin-top: 8px;
+
+    font-size: 0.9rem;
+
+    color: #81756d;
+
+    animation: fadeUp 1s ease forwards;
+}
+
+
+/* =========================
+   WHATSAPP CARD
+========================= */
+
+.whatsapp-card {
+    margin: 45px auto 0;
+
+    max-width: 430px;
+
+    padding: 25px;
+
+    border: 1px solid #ded5cd;
+
+    border-radius: 24px;
+
+    background: rgba(255, 255, 255, 0.35);
+
+    animation: fadeUp 1s ease forwards;
+}
+
+
+.whatsapp-card p {
+    font-size: 0.85rem;
+
+    color: #776b63;
+
+    margin-bottom: 18px;
+}
+
+
+#whatsappBtn {
+    width: 100%;
+
+    padding: 17px 22px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    background: #302a27;
+
+    color: white;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 0.82rem;
+
+    letter-spacing: 0.04em;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+#whatsappBtn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 25px rgba(48, 42, 39, 0.18);
+}
+
+
+#whatsappBtn:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================
+   FLOATING HEART ANIMATION
+========================= */
+
+@keyframes heartFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+
+}
+
+
+/* =========================
+   CONFETTI
+========================= */
+
+.confetti-container {
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+    overflow: hidden;
+
+    z-index: 1;
+}
+
+.confetti {
+    position: absolute;
+    top: -20px;
+
+    width: 7px;
+    height: 12px;
+
+    background: #8b7d72;
+
+    opacity: 0.8;
+
+    animation: confettiFall linear forwards;
+}
+
+.confetti:nth-child(3n) {
+    background: #302a27;
+}
+
+.confetti:nth-child(3n + 1) {
+    background: #b8a99d;
+}
+
+.confetti:nth-child(3n + 2) {
+    background: #d8cec5;
+}
+
+@keyframes confettiFall {
+
+    0% {
+        transform:
+            translateY(-20px)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
+        opacity: 0;
+    }
+
+}
+
+/* =========================
+   FONT AWESOME ICONS
+========================= */
+
+.continue-btn i,
+.yes-btn i,
+.think-btn i,
+.modal-yes-btn i,
+#whatsappBtn i {
+    font-size: 0.9em;
+    transition: transform 0.3s ease;
+}
+
+.continue-btn:hover i,
+#whatsappBtn:hover i {
+    transform: translateX(3px);
+}
+
+.little-note i {
+    margin-left: 4px;
+    font-size: 0.8em;
+}
+
+.question-decoration i {
+    font-size: 1.2rem;
+}
+
+.modal-icon i {
+    font-size: 2.5rem;
+}
+
+.success-icon i {
+    font-size: 1.8rem;
+}
+
+.success-content h2 i {
+    font-size: 0.5em;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+/* =========================
+   SCREEN FOUR
+========================= */
+
+.screen-four {
+    display: none;
+
+    min-height: 100vh;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 50px 24px;
+
+    background: #f8f4ef;
+
+    text-align: center;
+}
+
+.screen-four.show {
+    display: flex;
+}
+
+.persuasion-content {
+    width: 100%;
+    max-width: 560px;
+}
+
+
+/* =========================
+   ICON
+========================= */
+
+.persuasion-icon {
+    width: 68px;
+    height: 68px;
+
+    margin: 0 auto 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #cfc2b8;
+    border-radius: 50%;
+
+    color: #776960;
+
+    font-size: 1.7rem;
+
+    animation: heartFloat 2s ease-in-out infinite;
+}
+
+
+/* =========================
+   EYEBROW
+========================= */
+
+.persuasion-eyebrow {
+    font-size: 0.72rem;
+
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+
+    color: #8b7d72;
+
+    margin-bottom: 20px;
+
+    animation: fadeUp 0.8s ease forwards;
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+.persuasion-content h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(3rem, 11vw, 5.5rem);
+
+    line-height: 0.92;
+
+    font-weight: 500;
+
+    letter-spacing: -0.04em;
+
+    color: #2d2926;
+
+    margin-bottom: 30px;
+
+    animation: fadeUp 0.9s ease forwards;
+}
+
+.persuasion-content h2 em {
+    display: block;
+
+    font-style: italic;
+
+    color: #76685f;
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+.persuasion-text {
+    font-size: 0.85rem;
+
+    color: #8b7d72;
+
+    margin-bottom: 12px;
+}
+
+.persuasion-note {
+    max-width: 480px;
+
+    margin: 0 auto 14px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.25rem;
+
+    line-height: 1.45;
+
+    color: #5f554e;
+}
+
+.persuasion-question {
+    margin-top: 26px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.5rem;
+
+    font-style: italic;
+
+    color: #76685f;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.persuasion-buttons {
+    width: 100%;
+
+    max-width: 360px;
+
+    margin: 30px auto 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.persuasion-yes-btn,
+.persuasion-stay-btn {
+    width: 100%;
+
+    padding: 17px 22px;
+
+    border-radius: 50px;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 0.82rem;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.persuasion-yes-btn {
+    border: none;
+
+    background: #302a27;
+
+    color: white;
+}
+
+.persuasion-stay-btn {
+    border: 1px solid #cfc4bb;
+
+    background: transparent;
+
+    color: #4e4540;
+}
+
+.persuasion-yes-btn:hover,
+.persuasion-stay-btn:hover {
+    transform: translateY(-3px);
+}
+
+.persuasion-yes-btn:hover {
+    box-shadow:
+        0 12px 25px rgba(48, 42, 39, 0.18);
+}
