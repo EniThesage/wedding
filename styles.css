@@ -1,6 +1,6 @@
-/* =========================
-   RESET
-========================= */
+/* =========================================================
+   RESET & BASE
+========================================================= */
 
 * {
     margin: 0;
@@ -16,347 +16,521 @@ body {
     font-family: "DM Sans", sans-serif;
     background: #f8f4ef;
     color: #2d2926;
+    overflow-x: hidden;
 }
 
-
-/* =========================
-   MAIN CONTAINER
-========================= */
-
-.invitation {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 24px 20px 40px;
-    overflow: hidden;
+button {
+    font: inherit;
 }
-
-
-/* =========================
-   PHOTO SLIDER
-========================= */
-
-.photo-section {
-    width: 100%;
-    max-width: 520px;
-}
-
-.photo-slider {
-    position: relative;
-    width: 100%;
-    height: 55vh;
-    min-height: 420px;
-    max-height: 620px;
-
-    overflow: hidden;
-
-    border-radius: 24px;
-}
-
-.slide {
-    position: absolute;
-    inset: 0;
-
-    opacity: 0;
-
-    transition:
-        opacity 1.2s ease,
-        transform 5s ease;
-
-    transform: scale(1.04);
-}
-
-.slide.active {
-    opacity: 1;
-    transform: scale(1);
-}
-
-.slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-
-/* =========================
-   IMAGE OVERLAY
-========================= */
-
-.photo-slider::after {
-    content: "";
-
-    position: absolute;
-    inset: 0;
-
-    background:
-        linear-gradient(
-            to bottom,
-            rgba(0, 0, 0, 0.02),
-            rgba(0, 0, 0, 0.08)
-        );
-
-    pointer-events: none;
-}
-
-
-/* =========================
-   SLIDER DOTS
-========================= */
-
-.slider-dots {
-    display: flex;
-    justify-content: center;
-    gap: 7px;
-
-    margin-top: 14px;
-}
-
-.dot {
-    width: 6px;
-    height: 6px;
-
-    border-radius: 50%;
-
-    background: #d5cec6;
-
-    transition: all 0.4s ease;
-}
-
-.dot.active {
-    width: 20px;
-    border-radius: 10px;
-    background: #6d625b;
-}
-
-
-/* =========================
-   CONTENT
-========================= */
-
-.invitation-content {
-    width: 100%;
-    max-width: 520px;
-
-    text-align: center;
-
-    padding: 48px 10px 0;
-}
-
-
-/* =========================
-   EYEBROW
-========================= */
-
-.eyebrow {
-    font-size: 0.72rem;
-
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-
-    color: #8b7d72;
-
-    margin-bottom: 18px;
-
-    opacity: 0;
-    animation: fadeUp 0.9s ease forwards;
-    animation-delay: 0.4s;
-}
-
-
-/* =========================
-   HEADING
-========================= */
-
-h1 {
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: clamp(2.8rem, 10vw, 4.5rem);
-
-    line-height: 0.95;
-
-    font-weight: 500;
-
-    letter-spacing: -0.02em;
-
-    margin-bottom: 26px;
-
-    opacity: 0;
-    animation: fadeUp 1s ease forwards;
-    animation-delay: 0.7s;
-}
-
-h1 span {
-    display: inline-block;
-    padding: 1px 9px 3px;
-    margin: 2px 0;
-    background-color: #302a27;
-    color: #fff;
-    border: 1px solid #302a27;
-    border-radius: 1rem;
-    font-style: normal;
-}
-
-/* =========================
-   TAGLINE
-========================= */
-
-.tagline {
-    max-width: 430px;
-
-    margin: 0 auto;
-
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: 1.25rem;
-
-    line-height: 1.45;
-
-    color: #5f554e;
-
-    opacity: 0;
-    animation: fadeUp 1s ease forwards;
-    animation-delay: 1s;
-}
-
-
-/* =========================
-   LITTLE NOTE
-========================= */
-
-.little-note {
-    margin-top: 18px;
-
-    font-size: 0.9rem;
-
-    color: #756a62;
-
-    opacity: 0;
-    animation: fadeUp 1s ease forwards;
-    animation-delay: 1.3s;
-}
-
-
-/* =========================
-   BUTTON
-========================= */
-
-.continue-btn {
-    margin-top: 34px;
-
-    border: none;
-
-    background: #302a27;
-
-    color: #fff;
-
-    padding: 16px 24px;
-
-    border-radius: 50px;
-
-    font-family: "DM Sans", sans-serif;
-
-    font-size: 0.85rem;
-
-    cursor: pointer;
-
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-
-    opacity: 0;
-    animation: fadeUp 1s ease forwards;
-    animation-delay: 1.6s;
-}
-
-.continue-btn:hover {
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 12px 25px rgba(48, 42, 39, 0.18);
-}
-
-.continue-btn:active {
-    transform: scale(0.97);
-}
-
-
-/* =========================
-   ANIMATIONS
-========================= */
-
-@keyframes fadeUp {
-
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-}
-
-
-/* =========================
-   DESKTOP
-========================= */
-
-@media (min-width: 768px) {
-
-    .screen-one {
-        padding-top: 40px;
-    }
-
-    .photo-slider {
-        height: 560px;
-    }
-
-    .invitation-content {
-        padding-top: 55px;
-    }
-
-}
-
-
-/* =========================
-   SCREEN SYSTEM
-========================= */
 
 .screen {
     min-height: 100vh;
 }
 
-/* =========================
-   SCREEN ONE
-========================= */
+
+/* =========================================================
+   SCREEN 1 — CINEMATIC COVER
+========================================================= */
 
 .screen-one {
     min-height: 100vh;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+    background: #211b18;
+}
+
+
+/* =========================================================
+   CINEMATIC COVER
+========================================================= */
+
+.cinematic-cover {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 34px 42px;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 72% 30%,
+            rgba(137, 113, 94, 0.16),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 18% 82%,
+            rgba(94, 76, 64, 0.13),
+            transparent 32%
+        ),
+        #211b18;
+
+    color: #f4eee7;
+}
+
+
+/* =========================================================
+   CINEMATIC FRAME
+========================================================= */
+
+.cinematic-frame {
+    position: absolute;
+    inset: 18px;
+    border: 1px solid rgba(244, 238, 231, 0.16);
+    pointer-events: none;
+    z-index: 5;
+}
+
+.cinematic-frame::before,
+.cinematic-frame::after {
+    content: "";
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    border-color: rgba(244, 238, 231, 0.55);
+    border-style: solid;
+}
+
+.cinematic-frame::before {
+    top: -1px;
+    left: -1px;
+    border-width: 1px 0 0 1px;
+}
+
+.cinematic-frame::after {
+    right: -1px;
+    bottom: -1px;
+    border-width: 0 1px 1px 0;
+}
+
+
+/* =========================================================
+   TOP METADATA
+========================================================= */
+
+.cover-top {
+    position: relative;
+    z-index: 10;
 
     width: 100%;
 
     display: flex;
-    flex-direction: column;
-
+    justify-content: space-between;
     align-items: center;
 
-    padding: 24px 20px 60px;
+    padding: 4px 8px;
 
-    overflow: hidden;
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+
+    color: rgba(244, 238, 231, 0.62);
+
+    opacity: 0;
+
+    animation:
+        coverFadeIn 1s ease 0.2s forwards;
+}
+
+.cover-top span:last-child {
+    letter-spacing: 0.18em;
 }
 
 
-/* =========================
-   SCREEN TWO
-========================= */
+/* =========================================================
+   COUPLE TITLE
+========================================================= */
+
+.couple-title {
+    position: absolute;
+    z-index: 4;
+
+    top: 50%;
+    left: 50%;
+
+    width: 100%;
+
+    transform: translate(-50%, -53%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   NAME LINES
+========================================================= */
+
+.name-line {
+    overflow: hidden;
+    line-height: 0.78;
+}
+
+.name-line span {
+    display: block;
+}
+
+
+/* =========================================================
+   TAIWO — OUTLINE
+========================================================= */
+
+.name-outline {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(5rem, 18vw, 12rem);
+
+    font-weight: 400;
+    letter-spacing: -0.055em;
+
+    color: transparent;
+
+    -webkit-text-stroke:
+        1px rgba(244, 238, 231, 0.72);
+
+    transform: translateY(110%);
+
+    animation:
+        nameReveal
+        1.4s
+        cubic-bezier(0.77, 0, 0.18, 1)
+        0.25s
+        forwards;
+}
+
+
+/* =========================================================
+   AMPERSAND
+========================================================= */
+
+.ampersand-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 14px;
+    margin: 22px 0 20px;
+
+    opacity: 0;
+
+    animation:
+        coverFadeIn
+        1s
+        ease
+        1.1s
+        forwards;
+}
+
+.ampersand-wrap .ampersand {
+    margin: 0;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(2.8rem, 6vw, 4.5rem);
+
+    font-style: italic;
+    font-weight: 400;
+
+    color: #cbb8a7;
+
+    opacity: 1;
+    animation: none;
+}
+
+.ampersand-line {
+    width: 42px;
+    height: 1px;
+
+    background: rgba(203, 184, 167, 0.45);
+}
+
+
+/* =========================================================
+   RICHARD — SOLID
+========================================================= */
+
+.name-solid {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(5rem, 18vw, 12rem);
+
+    font-weight: 500;
+    letter-spacing: -0.055em;
+
+    color: #f4eee7;
+
+    transform: translateY(110%);
+
+    animation:
+        nameReveal
+        1.4s
+        cubic-bezier(0.77, 0, 0.18, 1)
+        0.5s
+        forwards;
+}
+
+
+/* =========================================================
+   SIDE LABEL
+========================================================= */
+
+.side-label {
+    position: absolute;
+
+    left: 28px;
+    top: 50%;
+
+    transform:
+        translateY(-50%)
+        rotate(-90deg);
+
+    z-index: 10;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.55rem;
+
+    letter-spacing: 0.35em;
+    color: rgba(244, 238, 231, 0.38);
+
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   SCREEN 1 — BOTTOM CONTENT
+========================================================= */
+
+.cover-bottom {
+    position: absolute;
+
+    left: 50%;
+    bottom: 7.5%;
+
+    transform: translateX(-50%);
+
+    z-index: 10;
+
+    width: min(90%, 420px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    gap: 24px;
+
+    opacity: 0;
+
+    animation:
+        bottomReveal
+        1s
+        ease
+        1.6s
+        forwards;
+}
+
+
+/* =========================================================
+   SCREEN 1 — MESSAGE
+========================================================= */
+
+.cover-message {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 9px;
+}
+
+.message-line {
+    width: 34px;
+    height: 1px;
+
+    margin-bottom: 4px;
+
+    background: #a99382;
+}
+
+
+/* ALL COVER PARAGRAPHS */
+
+.cover-message p {
+    width: 100%;
+    max-width: 330px;
+
+    margin: 0;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.15rem;
+    line-height: 1.3;
+
+    font-weight: 400;
+
+    color: rgba(244, 238, 231, 0.72);
+}
+
+
+/* FIRST COVER PARAGRAPH */
+
+.cover-message p:first-of-type {
+    font-size: 1.2rem;
+    color: rgba(244, 238, 231, 0.82);
+}
+
+
+/* SECOND & THIRD COVER PARAGRAPHS */
+
+.cover-message p:nth-of-type(2),
+.cover-message p:nth-of-type(3) {
+    font-size: 1.05rem;
+    line-height: 1.35;
+    color: rgba(244, 238, 231, 0.62);
+}
+
+
+/* EMPHASIS */
+
+.cover-message em {
+    color: #f4eee7;
+    font-style: italic;
+}
+
+
+/* =========================================================
+   ENTER BUTTON
+========================================================= */
+
+.cinematic-enter {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    padding: 12px 0;
+
+    border: none;
+    border-bottom: 1px solid rgba(244, 238, 231, 0.35);
+
+    background: transparent;
+    color: #f4eee7;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.62rem;
+
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        gap 0.4s ease,
+        border-color 0.4s ease;
+}
+
+.cinematic-enter i {
+    font-size: 0.7rem;
+
+    transition:
+        transform 0.4s ease;
+}
+
+.cinematic-enter:hover {
+    gap: 18px;
+    border-color: #f4eee7;
+}
+
+.cinematic-enter:hover i {
+    transform: translateX(4px);
+}
+
+.cinematic-enter:active {
+    transform: scale(0.98);
+}
+
+
+/* =========================================================
+   AMBIENT LIGHT
+========================================================= */
+
+.ambient-light {
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    border-radius: 50%;
+
+    filter: blur(90px);
+
+    pointer-events: none;
+
+    opacity: 0.15;
+}
+
+.ambient-light-one {
+    top: -180px;
+    right: -100px;
+
+    background: #b89d86;
+
+    animation:
+        ambientMove
+        12s
+        ease-in-out
+        infinite
+        alternate;
+}
+
+.ambient-light-two {
+    bottom: -220px;
+    left: -120px;
+
+    background: #7d6656;
+
+    animation:
+        ambientMoveTwo
+        15s
+        ease-in-out
+        infinite
+        alternate;
+}
+
+
+/* =========================================================
+   FILM GRAIN
+========================================================= */
+
+.film-grain {
+    position: absolute;
+    inset: 0;
+
+    z-index: 3;
+
+    pointer-events: none;
+
+    opacity: 0.045;
+
+    background-image:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
+
+    mix-blend-mode: soft-light;
+}
+
+
+/* =========================================================
+   SCREEN 2 — QUESTION
+========================================================= */
 
 .screen-two {
     display: none;
@@ -383,65 +557,19 @@ h1 span {
 }
 
 
-/* =========================
-   QUESTION
-========================= */
-
-/* .question-eyebrow {
-    font-size: 0.75rem;
-
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
-
-    color: #8b7d72;
-
-    margin-bottom: 25px;
-
-    opacity: 0;
-
-    animation: fadeUp 0.8s ease forwards;
-}
-
-
-.question-decoration {
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    gap: 12px;
-
-    margin-bottom: 25px;
-
-    color: #9b8b7e;
-}
-
-.question-decoration span:first-child,
-.question-decoration span:last-child {
-    width: 45px;
-    height: 1px;
-
-    background: #d8cec5;
-}
-
-
-.question-decoration span:nth-child(2) {
-    font-size: 1.4rem;
-} */
-
+/* QUESTION HEADING */
 
 .question-wrapper h2 {
+    margin-bottom: 30px;
+
     font-family: "Cormorant Garamond", serif;
 
     font-size: clamp(3rem, 11vw, 5.5rem);
 
     line-height: 0.95;
-
     font-weight: 500;
 
     letter-spacing: -0.03em;
-
-    margin-bottom: 30px;
 
     color: #2d2926;
 }
@@ -455,7 +583,10 @@ h1 span {
 }
 
 
+/* QUESTION PARAGRAPH */
+
 .question-subtext {
+    width: 100%;
     max-width: 420px;
 
     margin: 0 auto;
@@ -463,26 +594,25 @@ h1 span {
     font-family: "Cormorant Garamond", serif;
 
     font-size: 1.3rem;
+    line-height: 1.45;
 
-    line-height: 1.4;
+    font-weight: 400;
 
     color: #665b54;
 }
 
 
-/* =========================
+/* =========================================================
    ANSWER BUTTONS
-========================= */
+========================================================= */
 
 .answer-buttons {
     display: flex;
-
     flex-direction: column;
 
     gap: 14px;
 
     width: 100%;
-
     max-width: 360px;
 
     margin: 42px auto 0;
@@ -509,12 +639,10 @@ h1 span {
         box-shadow 0.3s ease;
 }
 
-
 .yes-btn {
     border: none;
 
     background: #302a27;
-
     color: white;
 }
 
@@ -522,29 +650,26 @@ h1 span {
     border: 1px solid #cfc4bb;
 
     background: transparent;
-
     color: #4e4540;
 }
-
 
 .yes-btn:hover,
 .think-btn:hover {
     transform: translateY(-3px);
 }
 
-
 .yes-btn:hover {
-    box-shadow: 0 12px 25px rgba(48, 42, 39, 0.18);
+    box-shadow:
+        0 12px 25px rgba(48, 42, 39, 0.18);
 }
 
 
-/* =========================
+/* =========================================================
    THINK MODAL
-========================= */
+========================================================= */
 
 .modal-overlay {
     position: fixed;
-
     inset: 0;
 
     z-index: 100;
@@ -565,7 +690,6 @@ h1 span {
     display: flex;
 }
 
-
 .think-modal {
     position: relative;
 
@@ -580,20 +704,28 @@ h1 span {
 
     text-align: center;
 
-    box-shadow: 0 25px 70px rgba(30, 25, 22, 0.2);
+    box-shadow:
+        0 25px 70px rgba(30, 25, 22, 0.2);
 
-    animation: modalIn 0.35s ease forwards;
+    animation:
+        modalIn
+        0.35s
+        ease
+        forwards;
 }
 
 
+/* CLOSE */
+
 .close-modal {
     position: absolute;
+
     top: 15px;
     right: 18px;
 
     border: none;
-    background: transparent;
 
+    background: transparent;
     color: #7d7169;
 
     cursor: pointer;
@@ -604,39 +736,65 @@ h1 span {
 }
 
 
+/* MODAL ICON */
+
 .modal-icon {
+    margin-bottom: 15px;
+
     font-size: 2.7rem;
 
-    margin-bottom: 15px;
+    color: #776960;
 }
 
 
+/* MODAL HEADING */
+
 .think-modal h3 {
+    margin-bottom: 10px;
+
     font-family: "Cormorant Garamond", serif;
 
     font-size: 2.8rem;
 
     font-weight: 500;
 
-    margin-bottom: 10px;
+    color: #2d2926;
 }
 
 
+/* MODAL MAIN PARAGRAPH */
+
 .think-modal > p {
-    color: #4f4640;
+    margin: 0;
+
+    font-family: "DM Sans", sans-serif;
 
     font-size: 0.95rem;
 
     line-height: 1.5;
+
+    color: #4f4640;
 }
 
 
-.modal-small-text {
+/* MODAL SMALL PARAGRAPH */
+
+.think-modal .modal-small-text {
     margin-top: 8px;
 
-    color: #83766d !important;
+    font-size: 0.82rem;
+
+    line-height: 1.5;
+
+    color: #83766d;
 }
 
+.modal-small-text i {
+    margin-left: 3px;
+}
+
+
+/* MODAL BUTTONS */
 
 .modal-yes-btn,
 .modal-close-btn {
@@ -653,15 +811,12 @@ h1 span {
     margin-top: 22px;
 }
 
-
 .modal-yes-btn {
     border: none;
 
     background: #302a27;
-
     color: white;
 }
-
 
 .modal-close-btn {
     margin-top: 10px;
@@ -674,26 +829,9 @@ h1 span {
 }
 
 
-/* =========================
-   MODAL ANIMATION
-========================= */
-
-@keyframes modalIn {
-
-    from {
-        opacity: 0;
-        transform: scale(0.94) translateY(10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-    }
-}
-
-/* =========================
-   SCREEN THREE
-========================= */
+/* =========================================================
+   SCREEN 3 — SUCCESS
+========================================================= */
 
 .screen-three {
     display: none;
@@ -718,11 +856,6 @@ h1 span {
     display: flex;
 }
 
-
-/* =========================
-   SUCCESS CONTENT
-========================= */
-
 .success-content {
     width: 100%;
     max-width: 560px;
@@ -733,9 +866,9 @@ h1 span {
 }
 
 
-/* =========================
+/* =========================================================
    SUCCESS ICON
-========================= */
+========================================================= */
 
 .success-icon {
     width: 72px;
@@ -757,16 +890,30 @@ h1 span {
 
     color: #776960;
 
-    animation: heartFloat 2s ease-in-out infinite;
+    animation:
+        heartFloat
+        2s
+        ease-in-out
+        infinite;
+}
+
+.success-icon i {
+    font-size: 1.8rem;
 }
 
 
-/* =========================
-   SUCCESS EYEBROW
-========================= */
+/* =========================================================
+   SUCCESS TEXT
+========================================================= */
 
 .success-eyebrow {
+    margin-bottom: 18px;
+
+    font-family: "DM Sans", sans-serif;
+
     font-size: 0.72rem;
+
+    line-height: 1.4;
 
     text-transform: uppercase;
 
@@ -774,17 +921,19 @@ h1 span {
 
     color: #8b7d72;
 
-    margin-bottom: 18px;
-
-    animation: fadeUp 0.8s ease forwards;
+    animation:
+        fadeUp
+        0.8s
+        ease
+        forwards;
 }
 
 
-/* =========================
-   SUCCESS HEADING
-========================= */
+/* SUCCESS HEADING */
 
 .success-content h2 {
+    margin-bottom: 24px;
+
     font-family: "Cormorant Garamond", serif;
 
     font-size: clamp(3.2rem, 12vw, 6rem);
@@ -795,44 +944,81 @@ h1 span {
 
     letter-spacing: -0.04em;
 
-    margin-bottom: 24px;
-
     color: #2d2926;
 
-    animation: fadeUp 0.9s ease forwards;
+    animation:
+        fadeUp
+        0.9s
+        ease
+        forwards;
+}
+
+.success-content h2 i {
+    font-size: 0.5em;
+
+    vertical-align: middle;
+
+    margin-left: 5px;
 }
 
 
+/* MAIN SUCCESS PARAGRAPH */
+
 .success-content > p:not(.success-eyebrow):not(.success-message) {
+    max-width: 430px;
+
+    margin: 0 auto;
+
     font-family: "Cormorant Garamond", serif;
 
     font-size: 1.45rem;
 
+    line-height: 1.4;
+
+    font-weight: 400;
+
     color: #5f554e;
 
-    animation: fadeUp 1s ease forwards;
+    animation:
+        fadeUp
+        1s
+        ease
+        forwards;
 }
 
 
+/* SECOND SUCCESS PARAGRAPH */
+
 .success-message {
-    margin-top: 8px;
+    max-width: 400px;
+
+    margin: 8px auto 0;
+
+    font-family: "DM Sans", sans-serif;
 
     font-size: 0.9rem;
 
+    line-height: 1.55;
+
     color: #81756d;
 
-    animation: fadeUp 1s ease forwards;
+    animation:
+        fadeUp
+        1s
+        ease
+        forwards;
 }
 
 
-/* =========================
+/* =========================================================
    WHATSAPP CARD
-========================= */
+========================================================= */
 
 .whatsapp-card {
-    margin: 45px auto 0;
-
+    width: 100%;
     max-width: 430px;
+
+    margin: 45px auto 0;
 
     padding: 25px;
 
@@ -842,18 +1028,30 @@ h1 span {
 
     background: rgba(255, 255, 255, 0.35);
 
-    animation: fadeUp 1s ease forwards;
+    animation:
+        fadeUp
+        1s
+        ease
+        forwards;
 }
 
+
+/* WHATSAPP CARD PARAGRAPH */
 
 .whatsapp-card p {
+    margin: 0 0 18px;
+
+    font-family: "DM Sans", sans-serif;
+
     font-size: 0.85rem;
 
-    color: #776b63;
+    line-height: 1.45;
 
-    margin-bottom: 18px;
+    color: #776b63;
 }
 
+
+/* WHATSAPP BUTTON */
 
 #whatsappBtn {
     width: 100%;
@@ -879,7 +1077,6 @@ h1 span {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     gap: 10px;
@@ -889,7 +1086,6 @@ h1 span {
         box-shadow 0.3s ease;
 }
 
-
 #whatsappBtn:hover {
     transform: translateY(-3px);
 
@@ -897,39 +1093,21 @@ h1 span {
         0 12px 25px rgba(48, 42, 39, 0.18);
 }
 
-
 #whatsappBtn:active {
     transform: scale(0.97);
 }
 
 
-/* =========================
-   FLOATING HEART ANIMATION
-========================= */
-
-@keyframes heartFloat {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-7px);
-    }
-
-}
-
-
-/* =========================
+/* =========================================================
    CONFETTI
-========================= */
+========================================================= */
 
 .confetti-container {
     position: absolute;
     inset: 0;
 
     pointer-events: none;
+
     overflow: hidden;
 
     z-index: 1;
@@ -937,6 +1115,7 @@ h1 span {
 
 .confetti {
     position: absolute;
+
     top: -20px;
 
     width: 7px;
@@ -946,7 +1125,10 @@ h1 span {
 
     opacity: 0.8;
 
-    animation: confettiFall linear forwards;
+    animation:
+        confettiFall
+        linear
+        forwards;
 }
 
 .confetti:nth-child(3n) {
@@ -961,74 +1143,10 @@ h1 span {
     background: #d8cec5;
 }
 
-@keyframes confettiFall {
 
-    0% {
-        transform:
-            translateY(-20px)
-            rotate(0deg);
-
-        opacity: 0;
-    }
-
-    10% {
-        opacity: 0.8;
-    }
-
-    100% {
-        transform:
-            translateY(110vh)
-            rotate(720deg);
-
-        opacity: 0;
-    }
-
-}
-
-/* =========================
-   FONT AWESOME ICONS
-========================= */
-
-.continue-btn i,
-.yes-btn i,
-.think-btn i,
-.modal-yes-btn i,
-#whatsappBtn i {
-    font-size: 0.9em;
-    transition: transform 0.3s ease;
-}
-
-.continue-btn:hover i,
-#whatsappBtn:hover i {
-    transform: translateX(3px);
-}
-
-.little-note i {
-    margin-left: 4px;
-    font-size: 0.8em;
-}
-
-.question-decoration i {
-    font-size: 1.2rem;
-}
-
-.modal-icon i {
-    font-size: 2.5rem;
-}
-
-.success-icon i {
-    font-size: 1.8rem;
-}
-
-.success-content h2 i {
-    font-size: 0.5em;
-    vertical-align: middle;
-    margin-left: 5px;
-}
-
-/* =========================
-   SCREEN FOUR
-========================= */
+/* =========================================================
+   SCREEN 4 — PERSUASION
+========================================================= */
 
 .screen-four {
     display: none;
@@ -1055,9 +1173,9 @@ h1 span {
 }
 
 
-/* =========================
-   ICON
-========================= */
+/* =========================================================
+   PERSUASION ICON
+========================================================= */
 
 .persuasion-icon {
     width: 68px;
@@ -1070,39 +1188,53 @@ h1 span {
     justify-content: center;
 
     border: 1px solid #cfc2b8;
+
     border-radius: 50%;
 
     color: #776960;
 
     font-size: 1.7rem;
 
-    animation: heartFloat 2s ease-in-out infinite;
+    animation:
+        heartFloat
+        2s
+        ease-in-out
+        infinite;
 }
 
 
-/* =========================
-   EYEBROW
-========================= */
+/* =========================================================
+   PERSUASION TEXT
+========================================================= */
 
 .persuasion-eyebrow {
+    margin-bottom: 20px;
+
+    font-family: "DM Sans", sans-serif;
+
     font-size: 0.72rem;
 
+    line-height: 1.4;
+
     text-transform: uppercase;
+
     letter-spacing: 0.18em;
 
     color: #8b7d72;
 
-    margin-bottom: 20px;
-
-    animation: fadeUp 0.8s ease forwards;
+    animation:
+        fadeUp
+        0.8s
+        ease
+        forwards;
 }
 
 
-/* =========================
-   HEADING
-========================= */
+/* HEADING */
 
 .persuasion-content h2 {
+    margin-bottom: 30px;
+
     font-family: "Cormorant Garamond", serif;
 
     font-size: clamp(3rem, 11vw, 5.5rem);
@@ -1115,9 +1247,11 @@ h1 span {
 
     color: #2d2926;
 
-    margin-bottom: 30px;
-
-    animation: fadeUp 0.9s ease forwards;
+    animation:
+        fadeUp
+        0.9s
+        ease
+        forwards;
 }
 
 .persuasion-content h2 em {
@@ -1129,19 +1263,25 @@ h1 span {
 }
 
 
-/* =========================
-   TEXT
-========================= */
+/* "BUT BEFORE YOU GO..." */
 
 .persuasion-text {
+    margin: 0 auto 12px;
+
+    font-family: "DM Sans", sans-serif;
+
     font-size: 0.85rem;
 
-    color: #8b7d72;
+    line-height: 1.5;
 
-    margin-bottom: 12px;
+    color: #8b7d72;
 }
 
+
+/* MAIN PERSUASION PARAGRAPHS */
+
 .persuasion-note {
+    width: 100%;
     max-width: 480px;
 
     margin: 0 auto 14px;
@@ -1152,15 +1292,22 @@ h1 span {
 
     line-height: 1.45;
 
+    font-weight: 400;
+
     color: #5f554e;
 }
 
+
+/* FINAL QUESTION */
+
 .persuasion-question {
-    margin-top: 26px;
+    margin: 26px auto 0;
 
     font-family: "Cormorant Garamond", serif;
 
     font-size: 1.5rem;
+
+    line-height: 1.35;
 
     font-style: italic;
 
@@ -1168,19 +1315,17 @@ h1 span {
 }
 
 
-/* =========================
-   BUTTONS
-========================= */
+/* =========================================================
+   PERSUASION BUTTONS
+========================================================= */
 
 .persuasion-buttons {
     width: 100%;
-
     max-width: 360px;
 
     margin: 30px auto 0;
 
     display: flex;
-
     flex-direction: column;
 
     gap: 12px;
@@ -1209,7 +1354,6 @@ h1 span {
     border: none;
 
     background: #302a27;
-
     color: white;
 }
 
@@ -1229,4 +1373,535 @@ h1 span {
 .persuasion-yes-btn:hover {
     box-shadow:
         0 12px 25px rgba(48, 42, 39, 0.18);
+}
+
+.persuasion-stay-btn:disabled {
+    cursor: default;
+    opacity: 0.7;
+    transform: none;
+}
+
+
+/* =========================================================
+   FONT AWESOME ICONS
+========================================================= */
+
+.cinematic-enter i,
+.yes-btn i,
+.think-btn i,
+.modal-yes-btn i,
+#whatsappBtn i,
+.persuasion-yes-btn i {
+    font-size: 0.9em;
+
+    transition:
+        transform 0.3s ease;
+}
+
+.cinematic-enter:hover i,
+#whatsappBtn:hover i {
+    transform: translateX(3px);
+}
+
+.modal-icon i {
+    font-size: 2.5rem;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes nameReveal {
+    from {
+        transform: translateY(110%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes coverFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+@keyframes bottomReveal {
+    from {
+        opacity: 0;
+
+        transform:
+            translateX(-50%)
+            translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateX(-50%)
+            translateY(0);
+    }
+}
+
+
+@keyframes ambientMove {
+    from {
+        transform:
+            translate(0, 0)
+            scale(1);
+    }
+
+    to {
+        transform:
+            translate(-100px, 80px)
+            scale(1.15);
+    }
+}
+
+
+@keyframes ambientMoveTwo {
+    from {
+        transform:
+            translate(0, 0)
+            scale(1);
+    }
+
+    to {
+        transform:
+            translate(120px, -70px)
+            scale(1.2);
+    }
+}
+
+
+@keyframes modalIn {
+    from {
+        opacity: 0;
+
+        transform:
+            scale(0.94)
+            translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0);
+    }
+}
+
+
+@keyframes heartFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+
+@keyframes confettiFall {
+    0% {
+        transform:
+            translateY(-20px)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   MOBILE — 600px AND BELOW
+========================================================= */
+
+@media (max-width: 600px) {
+
+    /* -----------------------------------------
+       CINEMATIC COVER
+    ----------------------------------------- */
+
+    .cinematic-cover {
+        padding: 28px 25px 32px;
+    }
+
+    .cinematic-frame {
+        inset: 12px;
+    }
+
+    .cover-top {
+        padding: 4px 6px;
+
+        font-size: 0.52rem;
+
+        letter-spacing: 0.22em;
+    }
+
+    .couple-title {
+        transform:
+            translate(-50%, -55%);
+    }
+
+    .name-outline,
+    .name-solid {
+        font-size: clamp(4.4rem, 23vw, 7rem);
+
+        letter-spacing: -0.06em;
+    }
+
+    .ampersand-wrap {
+        margin: 18px 0 16px;
+
+        gap: 10px;
+    }
+
+    .ampersand-wrap .ampersand {
+        font-size: 2.8rem;
+    }
+
+    .ampersand-line {
+        width: 28px;
+    }
+
+
+    /* -----------------------------------------
+       COVER MESSAGE
+    ----------------------------------------- */
+
+    .cover-bottom {
+        bottom: 5.5%;
+
+        width: 86%;
+
+        gap: 18px;
+    }
+
+    .cover-message {
+        gap: 7px;
+    }
+
+    .message-line {
+        width: 28px;
+
+        margin-bottom: 2px;
+    }
+
+    .cover-message p {
+        max-width: 290px;
+
+        font-size: 0.98rem;
+
+        line-height: 1.25;
+    }
+
+    .cover-message p:first-of-type {
+        font-size: 1.08rem;
+    }
+
+    .cover-message p:nth-of-type(2),
+    .cover-message p:nth-of-type(3) {
+        font-size: 0.92rem;
+
+        line-height: 1.3;
+    }
+
+
+    /* -----------------------------------------
+       SIDE LABEL
+    ----------------------------------------- */
+
+    .side-label {
+        left: 12px;
+
+        font-size: 0.45rem;
+
+        letter-spacing: 0.28em;
+    }
+
+
+    /* -----------------------------------------
+       ENTER BUTTON
+    ----------------------------------------- */
+
+    .cinematic-enter {
+        font-size: 0.52rem;
+
+        letter-spacing: 0.15em;
+
+        gap: 8px;
+    }
+
+
+    /* -----------------------------------------
+       QUESTION SCREEN
+    ----------------------------------------- */
+
+    .screen-two,
+    .screen-three,
+    .screen-four {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .question-wrapper h2 {
+        font-size: clamp(2.8rem, 13vw, 4.5rem);
+
+        margin-bottom: 24px;
+    }
+
+    .question-subtext {
+        max-width: 330px;
+
+        font-size: 1.18rem;
+
+        line-height: 1.4;
+    }
+
+    .answer-buttons {
+        max-width: 330px;
+
+        margin-top: 34px;
+    }
+
+
+    /* -----------------------------------------
+       MODAL
+    ----------------------------------------- */
+
+    .think-modal {
+        padding:
+            42px
+            22px
+            27px;
+    }
+
+    .think-modal h3 {
+        font-size: 2.5rem;
+    }
+
+    .think-modal > p {
+        font-size: 0.9rem;
+    }
+
+    .modal-small-text {
+        font-size: 0.78rem !important;
+    }
+
+
+    /* -----------------------------------------
+       SUCCESS
+    ----------------------------------------- */
+
+    .success-content h2 {
+        font-size: clamp(3rem, 14vw, 5rem);
+
+        margin-bottom: 20px;
+    }
+
+    .success-content > p:not(.success-eyebrow):not(.success-message) {
+        max-width: 320px;
+
+        font-size: 1.25rem;
+    }
+
+    .success-message {
+        max-width: 310px;
+
+        font-size: 0.84rem;
+    }
+
+    .whatsapp-card {
+        margin-top: 35px;
+
+        padding: 20px;
+    }
+
+
+    /* -----------------------------------------
+       PERSUASION
+    ----------------------------------------- */
+
+    .screen-four {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .persuasion-content h2 {
+        font-size: clamp(2.8rem, 12vw, 4.5rem);
+
+        margin-bottom: 25px;
+    }
+
+    .persuasion-text {
+        font-size: 0.8rem;
+    }
+
+    .persuasion-note {
+        max-width: 340px;
+
+        font-size: 1.12rem;
+
+        line-height: 1.4;
+    }
+
+    .persuasion-question {
+        margin-top: 22px;
+
+        font-size: 1.35rem;
+    }
+
+    .persuasion-buttons {
+        max-width: 330px;
+
+        margin-top: 25px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL SCREENS — 380px AND BELOW
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .cinematic-cover {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .name-outline,
+    .name-solid {
+        font-size: 4.05rem;
+    }
+
+    .couple-title {
+        transform:
+            translate(-50%, -58%);
+    }
+
+    .cover-bottom {
+        bottom: 4.5%;
+    }
+
+    .cover-message {
+        gap: 5px;
+    }
+
+    .cover-message p {
+        max-width: 250px;
+
+        font-size: 0.87rem;
+
+        line-height: 1.2;
+    }
+
+    .cover-message p:first-of-type {
+        font-size: 0.98rem;
+    }
+
+    .cover-message p:nth-of-type(2),
+    .cover-message p:nth-of-type(3) {
+        font-size: 0.82rem;
+    }
+
+    .cinematic-enter {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+
+    .question-wrapper h2 {
+        font-size: 2.65rem;
+    }
+
+    .question-subtext {
+        font-size: 1.05rem;
+    }
+
+    .success-content h2 {
+        font-size: 2.9rem;
+    }
+
+    .persuasion-content h2 {
+        font-size: 2.7rem;
+    }
+
+    .persuasion-note {
+        font-size: 1.02rem;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+    }
+
+    .cinematic-cover .cover-top,
+    .cinematic-cover .name-outline,
+    .cinematic-cover .name-solid,
+    .cinematic-cover .ampersand-wrap,
+    .cinematic-cover .cover-bottom,
+    .ambient-light-one,
+    .ambient-light-two,
+    .success-icon,
+    .success-eyebrow,
+    .success-content h2,
+    .success-content > p,
+    .success-message,
+    .whatsapp-card,
+    .persuasion-icon,
+    .persuasion-eyebrow,
+    .persuasion-content h2 {
+        animation: none;
+
+        opacity: 1;
+
+        transform: none;
+    }
 }

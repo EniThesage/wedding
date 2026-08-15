@@ -4,85 +4,119 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>A Little Invitation</title>
+    <title>A Little Invitation — Taiwo & Richard</title>
 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
 
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
+    <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-    <!-- =========================
-         SCREEN 1
-    ========================== -->
+   <!-- =========================
+     SCREEN 1 — CINEMATIC COVER
+========================== -->
 
-    <main class="screen screen-one" id="screenOne">
+<section class="screen screen-one" id="screenOne">
 
-        <section class="photo-section">
+    <div class="cinematic-cover">
 
-            <div class="photo-slider">
+        <!-- Cinematic frame -->
+        <div class="cinematic-frame"></div>
 
-                <div class="slide active">
-                    <img src="assets/bride-1.jpg" alt="Bride">
-                </div>
+        <!-- Top metadata -->
+        <header class="cover-top">
+            <span>A LITTLE INVITATION</span>
+            <span>2026</span>
+        </header>
 
-                <div class="slide">
-                    <img src="assets/bride-2.jpg" alt="Bride">
-                </div>
+        <!-- Couple names -->
+        <main class="couple-title">
 
-                <div class="slide">
-                    <img src="assets/bride-3.jpg" alt="Bride">
-                </div>
-
+            <div class="name-line">
+                <span class="name-outline">TAIWO</span>
             </div>
 
-            <div class="slider-dots">
-                <span class="dot active"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
+            <div class="ampersand-wrap">
+                <span class="ampersand-line"></span>
+
+                <span class="ampersand">&amp;</span>
+
+                <span class="ampersand-line"></span>
             </div>
 
-        </section>
+            <div class="name-line">
+                <span class="name-solid">RICHARD</span>
+            </div>
 
+        </main>
 
-        <section class="invitation-content">
+        <!-- Invitation message + CTA -->
+        <div class="cover-bottom">
 
-            <p class="eyebrow">
-                A little invitation, from me to you
-            </p>
+            <div class="cover-message">
 
-            <h1>
-                I have something
-                <span>very special</span>
-                to ask you…
-            </h1>
+                <span class="message-line"></span>
 
-            <p class="tagline">
-                As I begin this beautiful chapter of my life,
-                I want some of my favourite women by my side.
-            </p>
+                <p>
+                    I have something
+                    <em>very special</em>
+                    to ask you...
+                </p>
 
-            <p class="little-note">
-                And I would absolutely love for you to be one of them. <i class="fa-solid fa-heart"></i>
-            </p>
+                <p>
+                    As I begin this beautiful chapter of my life,i want some of my favourite ladies by my side.
+                </p>
 
-            <button class="continue-btn" id="continueBtn">
-                I have a feeling I know what this is <i class="fa-solid fa-eye"></i>
+                <p>
+                    And i would absolutely love for you to be one of them.
+                </p>
+            </div>
+
+            <button
+                class="cinematic-enter"
+                id="continueBtn"
+                type="button"
+            >
+                <span>ENTER INVITATION</span>
+
+                <i class="fa-solid fa-arrow-right"></i>
             </button>
 
-        </section>
+        </div>
 
-    </main>
+        <!-- Vertical editorial detail -->
+        <div class="side-label">
+            <span>WITH LOVE</span>
+        </div>
+
+        <!-- Ambient light -->
+        <div class="ambient-light ambient-light-one"></div>
+        <div class="ambient-light ambient-light-two"></div>
+
+        <!-- Film grain -->
+        <div class="film-grain"></div>
+
+    </div>
+
+</section>
 
 
     <!-- =========================
-         SCREEN 2
+         SCREEN 2 — THE QUESTION
     ========================== -->
 
     <main class="screen screen-two" id="screenTwo">
@@ -98,7 +132,6 @@
                 I can't imagine this beautiful journey
                 without you by my side.
             </p>
-
 
             <div class="answer-buttons">
 
@@ -117,13 +150,17 @@
         </div>
 
 
-        <!-- Think About It Modal -->
+        <!-- THINK MODAL -->
 
         <div class="modal-overlay" id="thinkModal">
 
             <div class="think-modal">
 
-                <button class="close-modal" id="closeModal" aria-label="Close">
+                <button
+                    class="close-modal"
+                    id="closeModal"
+                    aria-label="Close"
+                >
                     <i class="fa-solid fa-xmark"></i>
                 </button>
 
@@ -131,20 +168,20 @@
                     <i class="fa-solid fa-face-sad-tear"></i>
                 </div>
 
-                <h3>
-                    Waittt…
-                </h3>
+                <h3>Waittt…</h3>
 
                 <p>
                     You're really going to make the bride wait?
                 </p>
 
                 <p class="modal-small-text">
-                    Okay, okay… I'll give you a little time. <i class="fa-solid fa-heart"></i>
+                    Okay, okay… I'll give you a little time.
+                    <i class="fa-solid fa-heart"></i>
                 </p>
 
                 <button class="modal-yes-btn" id="modalYesBtn">
-                    Okay okay, I'm in! <i class="fa-solid fa-heart"></i>
+                    Okay okay, I'm in!
+                    <i class="fa-solid fa-heart"></i>
                 </button>
 
                 <button class="modal-close-btn" id="modalCloseBtn">
@@ -159,7 +196,7 @@
 
 
     <!-- =========================
-         SCREEN 3
+         SCREEN 3 — SUCCESS
     ========================== -->
 
     <main class="screen screen-three" id="screenThree">
@@ -175,7 +212,8 @@
             </p>
 
             <h2>
-                YOU SAID YES! <i class="fa-solid fa-heart"></i>
+                YOU SAID YES!
+                <i class="fa-solid fa-heart"></i>
             </h2>
 
             <p>
@@ -186,7 +224,15 @@
                 I'm so happy you're doing this with me.
             </p>
 
-            <div class="confetti-container" id="confettiContainer"></div>
+            <!-- CONFETTI -->
+
+            <div
+                class="confetti-container"
+                id="confettiContainer"
+                aria-hidden="true"
+            ></div>
+
+            <!-- WHATSAPP -->
 
             <div class="whatsapp-card">
 
@@ -205,71 +251,73 @@
 
     </main>
 
+
     <!-- =========================
-     SCREEN 4
-========================== -->
+         SCREEN 4 — PERSUASION
+    ========================== -->
 
-<main class="screen screen-four" id="screenFour">
+    <main class="screen screen-four" id="screenFour">
 
-    <div class="persuasion-content">
+        <div class="persuasion-content">
 
-        <div class="persuasion-icon">
-            <i class="fa-regular fa-heart"></i>
+            <div class="persuasion-icon">
+                <i class="fa-regular fa-heart"></i>
+            </div>
+
+            <p class="persuasion-eyebrow">
+                Just one little thought…
+            </p>
+
+            <h2>
+                Okay… I'll let you
+                <em>think.</em>
+            </h2>
+
+            <p class="persuasion-text">
+                But before you go…
+            </p>
+
+            <p class="persuasion-note">
+                Just imagine us getting ready together, laughing over
+                absolutely nothing, taking way too many pictures,
+                fixing each other's outfits, and making memories
+                I'll probably talk about forever.
+            </p>
+
+            <p class="persuasion-note">
+                I'd really, really love to have you beside me
+                for this chapter.
+            </p>
+
+            <p class="persuasion-question">
+                So… what do you say?
+            </p>
+
+            <div class="persuasion-buttons">
+
+                <button
+                    class="persuasion-yes-btn"
+                    id="persuasionYesBtn"
+                >
+                    YES, I'M IN!
+                    <i class="fa-solid fa-heart"></i>
+                </button>
+
+                <button
+                    class="persuasion-stay-btn"
+                    id="persuasionStayBtn"
+                >
+                    Okay, I still need time
+                </button>
+
+            </div>
+
         </div>
 
-        <p class="persuasion-eyebrow">
-            Just one little thought…
-        </p>
-
-        <h2>
-            Okay… I'll let you
-            <em>think.</em>
-        </h2>
-
-        <p class="persuasion-text">
-            But before you go…
-        </p>
-
-        <p class="persuasion-note">
-            Just imagine us getting ready together, laughing over
-            absolutely nothing, taking way too many pictures,
-            fixing each other's outfits, and making memories
-            I'll probably talk about forever.
-        </p>
-
-        <p class="persuasion-note">
-            I'd really, really love to have you beside me
-            for this chapter.
-        </p>
-
-        <p class="persuasion-question">
-            So… what do you say?
-        </p>
-
-        <div class="persuasion-buttons">
-
-            <button
-                class="persuasion-yes-btn"
-                id="persuasionYesBtn"
-            >
-                YES, I'M IN!
-                <i class="fa-solid fa-heart"></i>
-            </button>
-
-            <button
-                class="persuasion-stay-btn"
-                id="persuasionStayBtn"
-            >
-                Okay, I still need time
-            </button>
-
-        </div>
-
-    </div>
-
-</main>
+    </main>
 
 
+    <!-- JavaScript -->
     <script src="scripts.js"></script>
 
 </body>
